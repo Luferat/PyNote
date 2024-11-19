@@ -1,0 +1,33 @@
+dialog {
+    border: none;
+    border-radius: .3rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    width: 90%;
+    max-width: 300px;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    font-size: 90%;
+}
+
+dialog h4 {
+    margin-top: 0;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+dialog label {
+    display: block;
+}
+
+#titleAndTools span {
+    display: none;
+}
+
+@media screen and (min-width: 575px) {
+    #titleAndTools span {
+        display: inline;
+    }
+}

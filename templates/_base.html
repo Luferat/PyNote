@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/_base.css">
+    <link rel="stylesheet" id="cssVars" href="/static/css/vars_wrap.css">
+    {% if css %}
+    <link rel="stylesheet" href="/static/css/{{ css }}">
+    {% endif %}
+    {% if pagetitle != '' %}
+    <title>{{ pagetitle }} - {{ conf.sitename }}</title>
+    {% else %}
+    <title>{{ conf.sitename }}</title>
+    {% endif %}
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        <header>
+            <div id="header">
+
+                <a href="/">
+                    <span id="menuToggle"><i class="fa-solid fa-bars fa-fw"></i></span>
+                    {{ conf.sitelogo | safe }}
+                    <h1>{{ conf.sitename }}</h1>
+                </a>
+
+                <nav id="mainNav">
+                    <div>
+                        <a href="/"><i class="fa-solid fa-file-lines fa-fw"></i><span>Lista</span></a>
+                        <a href="/new"><i class="fa-solid fa-file-circle-plus fa-fw"></i><span>Novo</span></a>
+                        <a href="/about" class="responsive"><i class="fa-solid fa-circle-info fa-fw"></i><span>Sobre</span></a>
+                        <a href="/policies" class="responsive"><i class="fa-solid fa-user-lock fa=fw"></i><span>Sua Privacidade</span></a>
+                        <a href="/" id="toggleExpand"><i class="fa-solid fa-expand fa-fw"></i><span>Expandir</span></a>
+                    </div>
+                </nav>
+
+            </div>
+        </header>
+
+        <main>
+            <div id="main">
+                {% block content %}{% endblock %}
+            </div>
+        </main>
+
+        <footer>
+            <div id="footer">
+                <div class="license">
+                    <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer">
+                        <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt="Creative Commons License">
+                        <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt="Creative Commons Attribution">
+                        <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt="Creative Commons Share Adapt">
+                    </a> By Joca da Silva
+                </div>
+                <div class="links">
+                    <a href="/about">Sobre</a>
+                    &bull;
+                    <a href="/policies">Políticas de privacidade</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <div id="courtain"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/static/js/_base.js"></script>
+    {% if js %}
+    <script src="/static/js/{{ js }}"></script>
+    {% endif %}
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<form action="{{ toForm.action }}" method="post">
+
+    <input type="hidden" name="id" value="{{ toForm.id }}">
+
+    <p id="titleAndTools">
+        <button type="submit" id="btnSave" title="Salvar Nota">
+            <i class="fa-solid fa-floppy-disk fa-fw"></i>
+            <span>Salvar</span>
+        </button>
+        <input type="text" name="title" id="title" placeholder="{{ toForm.placeholder }}" value="{{ toForm.title }}">
+        <button type="button" id="btnCategories" title="Lista de Categorias">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>Categorias</span>
+        </button>
+    </p>
+    <p id="textContent">
+        <textarea name="content" id="content" placeholder="{{ toForm.placeholder }}">{{ toForm.content }}</textarea>
+    </p>
+
+    <dialog id="catList">
+        <h4>Categorias</h4>
+        <p>
+            {% for cat in categories %}
+            <label>
+                <input type="checkbox" name="categories" value="{{ cat.cat_id }}" {% if cat.cat_id in toForm.categories %} checked {% endif %}>
+                <span>{{ cat.cat_name }}</span>
+            </label>
+            {% endfor %}
+        </p>
+        <button id="btnOk" type="button">OK</button>
+    </dialog>
+
+    </div>
+
+</form>
