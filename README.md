@@ -1,2 +1,2 @@
 # PyNote
- Curso de Python - Bloco de Notas com Flask e MySQL.
+ Protótipo de um bloco de notas com Flask e MySQL para os cursos de Python.
